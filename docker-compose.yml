@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  resume-builder:
+    build: .
+    ports:
+      - '3000:3000'
+    volumes:
+      - prisma-data:/app/prisma
+    environment:
+      - DATABASE_URL=file:./prisma/dev.db
+volumes:
+  prisma-data:
